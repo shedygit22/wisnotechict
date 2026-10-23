@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 600 350">
+  <defs>
+    <linearGradient id="dpGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#102A56"/>
+      <stop offset="100%" stop-color="#0A1930"/>
+    </linearGradient>
+    <filter id="dpShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="600" height="350" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="600" height="350" rx="12" fill="#F5F7FA" stroke="#E3E8EF" stroke-width="1"/>
+  <!-- Office dashboard -->
+  <g transform="translate(60, 40)" filter="url(#dpShadow)">
+    <!-- Word doc -->
+    <rect x="20" y="40" width="100" height="140" rx="4" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <rect x="20" y="40" width="100" height="20" rx="4" fill="#2E55AB"/>
+    <rect x="40" y="70" width="60" height="12" rx="2" fill="#E3E8EF"/>
+    <rect x="40" y="90" width="40" height="10" rx="2" fill="#E3E8EF"/>
+    <rect x="40" y="108" width="50" height="10" rx="2" fill="#E3E8EF"/>
+    <!-- Excel sheet -->
+    <rect x="140" y="40" width="100" height="140" rx="4" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <rect x="140" y="40" width="100" height="20" rx="4" fill="#107243"/>
+    <rect x="144" y="70" width="28" height="14" rx="1" fill="#E3E8EF"/>
+    <rect x="178" y="70" width="28" height="14" rx="1" fill="#E3E8EF"/>
+    <rect x="144" y="90" width="28" height="14" rx="1" fill="#E3E8EF"/>
+    <rect x="178" y="90" width="28" height="14" rx="1" fill="#E3E8EF"/>
+    <rect x="144" y="110" width="28" height="14" rx="1" fill="#E3E8EF"/>
+    <rect x="178" y="110" width="28" height="14" rx="1" fill="#E3E8EF"/>
+    <!-- PowerPoint -->
+    <rect x="260" y="40" width="100" height="140" rx="4" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <rect x="260" y="40" width="100" height="20" rx="4" fill="#C2433A"/>
+    <rect x="272" y="70" width="76" height="100" rx="2" fill="#F5F7FA"/>
+    <rect x="272" y="80" width="40" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="272" y="110" width="40" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="272" y="140" width="40" height="20" rx="2" fill="#E3E8EF"/>
+  </g>
+  <!-- Calendar -->
+  <g transform="translate(420, 40)">
+    <rect x="0" y="0" width="120" height="140" rx="6" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <rect x="0" y="0" width="120" height="24" rx="6" fill="#102A56"/>
+    <rect x="20" y="8" width="16" height="8" rx="1" fill="#FFFFFF" opacity="0.2"/>
+    <rect x="44" y="8" width="16" height="8" rx="1" fill="#FFFFFF" opacity="0.2"/>
+    <rect x="68" y="8" width="16" height="8" rx="1" fill="#FFFFFF" opacity="0.2"/>
+    <rect x="92" y="8" width="16" height="8" rx="1" fill="#FFFFFF" opacity="0.2"/>
+    <rect x="16" y="32" width="22" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="44" y="32" width="22" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="72" y="32" width="22" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="100" y="32" width="22" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="16" y="58" width="22" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="44" y="58" width="22" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="72" y="58" width="22" height="20" rx="2" fill="#E3E8EF"/>
+    <rect x="100" y="58" width="22" height="20" rx="2" fill="#E3E8EF"/>
+  </g>
+  <!-- Inbox -->
+  <g transform="translate(420, 200)">
+    <rect x="0" y="0" width="120" height="80" rx="6" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <rect x="10" y="10" width="100" height="12" rx="2" fill="#E3E8EF"/>
+    <rect x="10" y="30" width="60" height="12" rx="2" fill="#E3E8EF"/>
+    <rect x="80" y="30" width="30" height="12" rx="2" fill="#E3E8EF"/>
+    <rect x="10" y="50" width="80" height="12" rx="2" fill="#E3E8EF"/>
+    <rect x="100" y="50" width="10" height="12" rx="2" fill="#E3E8EF"/>
+  </g>
+  <text x="300" y="325" font-family="Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">Microsoft Office &amp; Digital Productivity</text>
+</svg>

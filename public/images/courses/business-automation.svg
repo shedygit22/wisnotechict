@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 600 350">
+  <defs>
+    <linearGradient id="baGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#102A56"/>
+      <stop offset="100%" stop-color="#0A1930"/>
+    </linearGradient>
+    <filter id="baShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="600" height="350" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="600" height="350" rx="12" fill="#F5F7FA" stroke="#E3E8EF" stroke-width="1"/>
+  <!-- Workflow diagram -->
+  <g transform="translate(80, 60)" filter="url(#baShadow)">
+    <!-- Step 1 -->
+    <rect x="20" y="40" width="100" height="50" rx="8" fill="#102A56"/>
+    <text x="70" y="70" font-family="Arial" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Input</text>
+    <!-- Step 2 -->
+    <rect x="160" y="20" width="100" height="50" rx="8" fill="#102A56" opacity="0.8"/>
+    <text x="210" y="50" font-family="Arial" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Process</text>
+    <!-- Step 3 -->
+    <rect x="300" y="40" width="100" height="50" rx="8" fill="#102A56" opacity="0.6"/>
+    <text x="350" y="70" font-family="Arial" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Output</text>
+    <!-- Arrows -->
+    <path d="M120 65 L155 65" stroke="#102A56" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M155 65 L160 60 L155 55 Z" fill="#102A56"/>
+    <path d="M260 45 L295 45" stroke="#102A56" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M295 45 L300 40 L295 50 Z" fill="#102A56" opacity="0.7"/>
+    <!-- AI sparkle between -->
+    <path d="M110 20 L130 40 L110 60 Z" fill="#102A56" opacity="0.3"/>
+    <path d="M150 10 L170 30 L150 50 Z" fill="#102A56" opacity="0.3"/>
+  </g>
+  <!-- Automation icons -->
+  <g transform="translate(450, 40)">
+    <rect x="0" y="0" width="100" height="100" rx="10" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <path d="M20 50 L30 40 L50 60 L80 20 L90 30 L70 50 Z" fill="#102A56" opacity="0.15"/>
+    <circle cx="45" cy="35" r="6" fill="#102A56" opacity="0.3"/>
+    <circle cx="65" cy="45" r="6" fill="#102A56" opacity="0.3"/>
+    <circle cx="35" cy="65" r="6" fill="#102A56" opacity="0.3"/>
+  </g>
+  <g transform="translate(450, 160)">
+    <rect x="0" y="0" width="100" height="100" rx="10" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <rect x="20" y="20" width="60" height="60" rx="4" fill="#102A56" opacity="0.1"/>
+    <rect x="30" y="30" width="40" height="40" rx="2" fill="#102A56" opacity="0.2"/>
+    <line x1="30" y1="50" x2="70" y2="50" stroke="#102A56" stroke-width="2"/>
+    <line x1="50" y1="30" x2="50" y2="70" stroke="#102A56" stroke-width="2"/>
+  </g>
+  <!-- Clock -->
+  <g transform="translate(450, 280)">
+    <rect x="0" y="0" width="100" height="40" rx="10" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <circle cx="25" cy="20" r="10" fill="#102A56" opacity="0.15"/>
+    <circle cx="25" cy="20" r="4" fill="#102A56"/>
+    <line x1="25" y1="20" x2="35" y2="12" stroke="#102A56" stroke-width="2" stroke-linecap="round"/>
+    <line x1="25" y1="20" x2="20" y2="28" stroke="#102A56" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="300" y="325" font-family="Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">Business Automation &amp; AI Workflows</text>
+</svg>

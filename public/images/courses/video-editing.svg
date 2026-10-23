@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 600 350">
+  <defs>
+    <linearGradient id="veGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#102A56"/>
+      <stop offset="100%" stop-color="#0A1930"/>
+    </linearGradient>
+    <filter id="veShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="600" height="350" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="600" height="350" rx="12" fill="#F5F7FA" stroke="#E3E8EF" stroke-width="1"/>
+  <!-- Video editing timeline -->
+  <g transform="translate(80, 50)" filter="url(#veShadow)">
+    <rect x="0" y="0" width="440" height="220" rx="8" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1.5"/>
+    <!-- Preview monitor -->
+    <rect x="20" y="20" width="200" height="150" rx="6" fill="#0A1930"/>
+    <rect x="30" y="30" width="180" height="130" rx="4" fill="#0A1930" opacity="0.3"/>
+    <circle cx="100" cy="120" r="16" fill="#102A56" opacity="0.5"/>
+    <rect x="84" y="104" width="12" height="32" fill="#102A56"/>
+    <rect x="116" y="104" width="12" height="32" fill="#102A56"/>
+    <!-- Timeline -->
+    <rect x="20" y="180" width="200" height="20" rx="4" fill="#E3E8EF"/>
+    <rect x="20" y="182" width="80" height="16" rx="2" fill="#102A56"/>
+    <rect x="110" y="182" width="90" height="16" rx="2" fill="#102A56" opacity="0.5"/>
+    <!-- Playhead -->
+    <rect x="110" y="160" width="4" height="40" fill="#DC2626"/>
+    <!-- Tracks -->
+    <rect x="240" y="20" width="180" height="200" rx="6" fill="#FFFFFF" stroke="#E3E8EF" stroke-width="1"/>
+    <rect x="250" y="40" width="40" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="300" y="40" width="50" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="360" y="40" width="30" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="250" y="80" width="60" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="320" y="80" width="40" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="250" y="120" width="50" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="310" y="120" width="70" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="250" y="160" width="70" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="330" y="160" width="50" height="24" rx="3" fill="#102A56" opacity="0.2"/>
+  </g>
+  <!-- Camera icon -->
+  <g transform="translate(500, 40)">
+    <rect x="0" y="0" width="80" height="80" rx="8" fill="#102A56" opacity="0.1" stroke="#102A56" stroke-width="1"/>
+    <rect x="10" y="10" width="60" height="40" rx="4" fill="#102A56"/>
+    <circle cx="40" cy="50" r="10" fill="#102A56"/>
+    <circle cx="40" cy="50" r="4" fill="#FFFFFF"/>
+  </g>
+  <!-- Clapperboard -->
+  <g transform="translate(500, 140)">
+    <rect x="0" y="0" width="80" height="80" rx="6" fill="#102A56" opacity="0.1" stroke="#102A56" stroke-width="1"/>
+    <rect x="10" y="8" width="60" height="12" rx="2" fill="#0A1930"/>
+    <rect x="10" y="24" width="60" height="12" rx="2" fill="#0A1930"/>
+    <rect x="10" y="40" width="60" height="36" rx="2" fill="#FFFFFF"/>
+    <path d="M10 8 L60 8 L70 18 L60 80 L10 80 Z" fill="#E3E8EF" opacity="0.5"/>
+  </g>
+  <text x="300" y="325" font-family="Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">Video Editing &amp; Post-Production</text>
+</svg>
