@@ -9,7 +9,7 @@ export interface LogoProps {
   href?: string;
 }
 
-export const Logo = React.forwardRef<HTMLAnchorElement, LogoProps>(
+export const Logo = React.forwardRef<HTMLSpanElement, LogoProps>(
   ({ className = "", inverted = false, href, ...props }, ref) => {
     const textColor = inverted ? "text-white" : "text-black";
 
@@ -31,7 +31,7 @@ export const Logo = React.forwardRef<HTMLAnchorElement, LogoProps>(
       return (
         <Link
           href={href}
-          ref={ref}
+          ref={ref as React.Ref<HTMLAnchorElement>}
           className={`flex items-center gap-2 ${className}`}
           {...props}
         >
@@ -41,14 +41,13 @@ export const Logo = React.forwardRef<HTMLAnchorElement, LogoProps>(
     }
 
     return (
-      <a
+      <span
         ref={ref}
-        href="#"
         className={`flex items-center gap-2 ${className}`}
         {...props}
       >
         {renderLogo()}
-      </a>
+      </span>
     );
   },
 );
