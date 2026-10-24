@@ -3,11 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Button from "@/components/ui/button";
-import {
-  Input,
-  Select,
-  Textarea,
-} from "@/components/ui/input";
+import { Input, Select } from "@/components/ui/input";
 import Card from "@/components/ui/card";
 import {
   getAvailableCourses,
@@ -73,9 +69,7 @@ export default function EnrollmentPage() {
   const [form, setForm] = React.useState<EnrollmentFormData>(INITIAL_FORM);
   const [pricing, setPricing] = React.useState<any>(null);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [submitted, setSubmitted] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
-  const [showFallback, setShowFallback] = React.useState(false);
 
   const allCourses = React.useMemo(
     () => [...getAvailableCourses(), ...getPlannedCourses()],
@@ -133,9 +127,7 @@ export default function EnrollmentPage() {
     computePricing();
   }, [form, computePricing]);
 
-  const isEdo = form.locationCategory === "edo-state";
   const isOutsideEdo = form.locationCategory === "outside-edo";
-  const isOnline = form.locationCategory === "online";
   const isInternational = form.locationCategory === "international";
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -178,7 +170,6 @@ export default function EnrollmentPage() {
     // Simulate saving lead (in production, call a real backend endpoint)
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitted(true);
       setStep(5);
     }, 1000);
   };
@@ -204,7 +195,6 @@ export default function EnrollmentPage() {
       `Additional Message: ${form.additionalMessage || "None"}`,
     ].join("%0A");
 
-    setShowFallback(false);
     window.location.href = `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;
   };
 
@@ -710,53 +700,106 @@ export default function EnrollmentPage() {
   };
 
   return (
-    <section className="px-4 py-16">
-      <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#0A1930] leading-tight mb-4">
-            Training Enrollment
-          </h1>
-          <p className="text-lg text-[#344054] leading-relaxed">
-            Apply to join Wisnotech Academy. Select your courses, provide your
-            details, and review your fee before submission.
-          </p>
-        </div>
-
-        <div className="flex items-center justify-between mb-8 px-4">
-          {[1, 2, 3, 4, 5].map((n) => {
-            const isActive = n === step;
-            const isCompleted = n < step;
-            return (
-              <div
-                key={n}
-                className="flex items-center gap-2"
+    <div className="relative">
+      <section className="hero-surface relative overflow-hidden px-4 pb-10 pt-12 md:pb-12 md:pt-14">
+        <div
+          className="pointer-events-none absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]"
+          aria-hidden="true"
+        />
+        <div className="hero-orb -right-24 top-0 h-72 w-72" aria-hidden="true" />
+        <div className="container relative z-10 mx-auto max-w-4xl">
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div>
+              <span className="eyebrow">Wisnotech Academy</span>
+              <h1 className="mt-4 max-w-2xl text-[2.4rem] leading-[1.05] text-[#0A1930] sm:text-5xl lg:text-[3.25rem]">
+                Training Enrollment
+              </h1>
+              <p className="mt-4 max-w-2xl leading-relaxed text-[#475569]">
+                Apply to join Wisnotech Academy. Select your courses, provide
+                your details, and review your fee before submission.
+              </p>
+            </div>
+            <div className="shrink-0 rounded-xl border border-[#E3E8EF] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
+              <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[#64748B]">
+                Need help?
+              </p>
+              <Link
+                href="/contact"
+                className="mt-1 inline-flex text-sm font-semibold text-[#102A56] hover:text-[#0A1930]"
               >
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-                  isCompleted
-                    ? "bg-[#102A56] text-white"
-                    : isActive
-                    ? "bg-[#102A56]/10 text-[#102A56] border border-[#102A56]"
-                    : "bg-[#F5F7FA] text-[#64748B] border border-[#E3E8EF]"
-                }`}>
-                  {n}
-                </div>
-                {n < 5 && (
-                  <div className={`h-px ${
-                    isCompleted || isActive ? "bg-[#102A56]" : "bg-[#E3E8EF]"
-                  }`} />
-                )}
-                <span className={`text-xs font-medium ${
-                  isCompleted || isActive ? "text-[#0A1930]" : "text-[#64748B]"
-                }`}>
-                  {STEP_TITLES[n as EnrollmentStep]}
-                </span>
-              </div>
-            );
-          })}
+                Talk to our team
+              </Link>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {stepContent[step]}
-      </div>
-    </section>
+      <section className="pb-20 pt-8 md:pt-10">
+        <div className="container mx-auto max-w-4xl">
+          <div className="rounded-2xl border border-[#E3E8EF] bg-white p-4 shadow-soft md:p-5">
+            <div className="flex items-center justify-between gap-4 lg:hidden">
+              <span className="text-sm font-semibold text-[#0A1930]">
+                Step {step} of 5
+              </span>
+              <span className="text-sm text-[#64748B]">
+                {STEP_TITLES[step]}
+              </span>
+            </div>
+            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-[#E3E8EF] lg:hidden">
+              <div
+                className="h-full rounded-full bg-[linear-gradient(90deg,#102A56,#C9A25B)] transition-all duration-500"
+                style={{ width: `${(step / 5) * 100}%` }}
+              />
+            </div>
+
+            <div className="hidden items-center lg:flex">
+              {([1, 2, 3, 4, 5] as EnrollmentStep[]).map((n, index) => {
+                const isActive = n === step;
+                const isCompleted = n < step;
+                return (
+                  <React.Fragment key={n}>
+                    <div className="flex items-center gap-2.5">
+                      <div
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-colors ${
+                          isCompleted
+                            ? "bg-[#102A56] text-white"
+                            : isActive
+                              ? "border border-[#102A56] bg-[#102A56]/10 text-[#102A56]"
+                              : "border border-[#E3E8EF] bg-[#F5F7FA] text-[#64748B]"
+                        }`}
+                      >
+                        {isCompleted ? (
+                          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        ) : (
+                          n
+                        )}
+                      </div>
+                      <span
+                        className={`whitespace-nowrap text-xs font-medium ${
+                          isCompleted || isActive ? "text-[#0A1930]" : "text-[#64748B]"
+                        }`}
+                      >
+                        {STEP_TITLES[n]}
+                      </span>
+                    </div>
+                    {index < 4 && (
+                      <div
+                        className={`mx-3 h-px flex-1 ${
+                          n < step ? "bg-[#102A56]" : "bg-[#E3E8EF]"
+                        }`}
+                      />
+                    )}
+                  </React.Fragment>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="mt-6">{stepContent[step]}</div>
+        </div>
+      </section>
+    </div>
   );
 }

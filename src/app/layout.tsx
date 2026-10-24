@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Chatbot } from "@/components/chatbot/Chatbot";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { BRAND } from "@/types";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
 export const metadata: Metadata = {
   title: BRAND.name,
@@ -27,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${manrope.variable} font-sans antialiased`}>
         <link rel="icon" href="/favicon.svg" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <a href="#main-content" className="skip-link">
@@ -37,6 +39,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
         <Chatbot />
+        <ScrollReveal />
       </body>
     </html>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -7,12 +9,24 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ children, className = "", hoverable = false, ...props }, ref) => {
+  (
+    { children, className = "", hoverable = false, onMouseMove, ...props },
+    ref,
+  ) => {
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+      const element = event.currentTarget;
+      const rect = element.getBoundingClientRect();
+      element.style.setProperty("--spot-x", `${event.clientX - rect.left}px`);
+      element.style.setProperty("--spot-y", `${event.clientY - rect.top}px`);
+      onMouseMove?.(event);
+    };
+
     return (
       <div
         ref={ref}
-        className={`bg-white border border-[#E3E8EF] rounded-xl p-6 transition-colors duration-200 ${
-          hoverable ? "hover:border-[#102A56]" : ""
+        onMouseMove={handleMouseMove}
+        className={`card-base spotlight-card ${
+          hoverable ? "card-hoverable" : ""
         } ${className}`}
         {...props}
       >
@@ -33,11 +47,7 @@ export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 export const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
   ({ children, className = "", ...props }, ref) => {
     return (
-      <div
-        ref={ref}
-        className={`mb-4 ${className}`}
-        {...props}
-      >
+      <div ref={ref} className={`mb-4 ${className}`} {...props}>
         {children}
       </div>
     );
@@ -67,7 +77,8 @@ export const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
 
 CardTitle.displayName = "CardTitle";
 
-export interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
+export interface CardDescriptionProps
+  extends React.HTMLAttributes<HTMLParagraphElement> {
   children: React.ReactNode;
   className?: string;
 }

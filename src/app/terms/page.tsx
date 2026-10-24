@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function TermsPage() {
   return (
     <section className="px-4 py-16">

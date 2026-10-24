@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Button from "@/components/ui/button";
 
 const ARTICLES: Record<string, { title: string; category: string; date: string; readTime: string; content: string }> = {
   "digital-skills-for-nigerian-youth": {
@@ -71,27 +72,118 @@ export default async function InsightArticlePage({ params }: { params: { slug: s
   const article = ARTICLES[slug];
   if (!article) notFound();
 
+  const related = Object.entries(ARTICLES).filter(([key]) => key !== slug);
+
   return (
-    <section className="px-4 py-16">
-      <div className="container mx-auto max-w-2xl">
-        <nav className="mb-8 text-xs text-[#64748B]">
-          <Link href="/insights" className="hover:text-[#102A56]">← Back to Insights</Link>
-        </nav>
-        <article>
-          <span className="inline-block text-xs font-semibold text-[#102A56] uppercase tracking-wide mb-2 block">
+    <div className="relative">
+      <section className="hero-surface relative overflow-hidden px-4 pb-12 pt-10 md:pb-16 md:pt-12">
+        <div
+          className="pointer-events-none absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_10%,black,transparent)]"
+          aria-hidden="true"
+        />
+        <div className="hero-orb -right-24 top-0 h-72 w-72" aria-hidden="true" />
+        <div className="container relative z-10">
+          <nav className="mb-8 text-xs text-[#64748B]" aria-label="Breadcrumb">
+            <ol className="flex flex-wrap items-center gap-2">
+              <li>
+                <Link href="/" className="transition-colors hover:text-[#102A56]">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-[#CBD5E1]">/</li>
+              <li>
+                <Link href="/insights" className="transition-colors hover:text-[#102A56]">
+                  Insights
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-[#CBD5E1]">/</li>
+              <li className="line-clamp-1 text-[#0A1930]">{article.title}</li>
+            </ol>
+          </nav>
+
+          <span className="rounded-full border border-[#E3E8EF] bg-white/80 px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[#102A56] shadow-sm">
             {article.category}
           </span>
-          <h1 className="text-3xl md:text-4xl font-bold text-[#0A1930] leading-tight mb-6">
+          <h1 className="mt-5 max-w-4xl text-[2.4rem] leading-[1.04] text-[#0A1930] sm:text-5xl lg:text-[3.4rem]">
             {article.title}
           </h1>
-          <div className="flex items-center gap-4 text-sm text-[#64748B] mb-8">
+          <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[#E3E8EF] pt-5 text-sm text-[#64748B]">
             <span>{article.date}</span>
-            <span>•</span>
+            <span aria-hidden="true" className="h-1 w-1 rounded-full bg-[#CBD5E1]" />
             <span>{article.readTime}</span>
+            <span aria-hidden="true" className="h-1 w-1 rounded-full bg-[#CBD5E1]" />
+            <span>Wisnotech Insights</span>
           </div>
-          <div className="prose prose-lg text-[#344054] leading-relaxed space-y-6" dangerouslySetInnerHTML={{ __html: article.content }} />
-        </article>
-      </div>
-    </section>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-16">
+        <div className="container">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start">
+            <article>
+              <div
+                className="article-body max-w-3xl"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
+
+              <div className="mt-10 max-w-3xl rounded-2xl border border-[#E3E8EF] bg-white p-6 shadow-soft md:p-8" data-reveal>
+                <p className="eyebrow">Keep learning</p>
+                <h2 className="mt-3">Build practical skills with Wisnotech.</h2>
+                <p className="mt-3 text-sm leading-relaxed text-[#64748B]">
+                  Explore project-based training at Wisnotech Academy or speak
+                  with our team about a solution for your organization.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <Link href="/courses">
+                    <Button>Explore Courses</Button>
+                  </Link>
+                  <Link href="/contact">
+                    <Button variant="outline">Talk to Us</Button>
+                  </Link>
+                </div>
+              </div>
+            </article>
+
+            <aside className="space-y-5 lg:sticky lg:top-28">
+              <div className="rounded-2xl border border-[#E3E8EF] bg-white p-6 shadow-soft">
+                <p className="eyebrow">More insights</p>
+                <div className="mt-4 space-y-4">
+                  {related.map(([relatedSlug, relatedArticle]) => (
+                    <Link
+                      key={relatedSlug}
+                      href={`/insights/${relatedSlug}`}
+                      className="group block border-b border-[#E3E8EF] pb-4 last:border-0 last:pb-0"
+                    >
+                      <p className="text-[0.62rem] font-bold uppercase tracking-[0.12em] text-[#A87E34]">
+                        {relatedArticle.category}
+                      </p>
+                      <p className="mt-1.5 text-sm font-semibold leading-snug text-[#0A1930] transition-colors group-hover:text-[#102A56]">
+                        {relatedArticle.title}
+                      </p>
+                      <p className="mt-1.5 text-xs text-[#64748B]">
+                        {relatedArticle.readTime}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-[#0A1930] p-6 text-white shadow-lift">
+                <p className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-[#D8B878]">
+                  Need guidance?
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-[#CBD5E1]">
+                  Tell us what you want to learn or build. We will recommend a
+                  practical next step.
+                </p>
+                <Link href="/contact" className="mt-4 block">
+                  <Button fullWidth>Contact Wisnotech</Button>
+                </Link>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

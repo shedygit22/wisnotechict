@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { searchKnowledgeBase, getKnowledgeBase } from "@/lib/knowledge-base";
-import { WHATSAPP_URL } from "@/types";
+import { searchKnowledgeBase } from "@/lib/knowledge-base";
 
 export const Chatbot = () => {
   const [isOpen, setIsOpen] = React.useState(false);
