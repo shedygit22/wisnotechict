@@ -4,8 +4,36 @@ import { PRICING_RULES, formatNaira } from "@/lib/pricing";
 import { CONTACT_INFO, WHATSAPP_URL, GMAIL_URL, TEL_URL, BRAND } from "@/types";
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
+import { FaqAccordion } from "@/components/ui/faq-accordion";
 
 const HERO_IMAGE = "/images/courses/students-collaborating.jpg";
+
+const FAQS = [
+  {
+    q: "What courses are available?",
+    a: "Wisnotech Academy offers web development, graphic design, UI/UX design, video editing, AI content creation, digital marketing, software development, Microsoft Office, and data processing. Some courses are planned and not yet open for enrollment.",
+  },
+  {
+    q: "Where is training located?",
+    a: "In-person training is held in Uromi, Edo State, Nigeria. Some courses are available online or in hybrid format.",
+  },
+  {
+    q: "Is accommodation provided?",
+    a: "Accommodation may be available for eligible students travelling from outside Edo State for in-person programs, where the offer has been confirmed. Please confirm with our team.",
+  },
+  {
+    q: "How much do courses cost?",
+    a: "Course fees are listed on each course page. Standard in-person training starts at ₦300,000 for Edo State residents and ₦500,000 for students from outside Edo State. Online training has course-specific pricing.",
+  },
+  {
+    q: "Do you build custom software?",
+    a: "Yes. We build custom business software, school management systems, websites, mobile apps, and AI solutions. Prices are quoted after assessing your requirements.",
+  },
+  {
+    q: "How do I enroll?",
+    a: "Select your course on our website, complete the enrollment form, and submit your details. You will be directed to WhatsApp to continue the process with our team.",
+  },
+];
 
 export default function HomePage() {
   const availableCourses = getAvailableCourses().slice(0, 4);
@@ -350,17 +378,17 @@ export default function HomePage() {
               <h2 className="text-2xl md:text-3xl font-bold text-[#0A1930] mb-6">How Business Projects Work</h2>
               <ol className="space-y-5">
                 {[
-                  "Share your business challenge with us.",
-                  "Discuss requirements with our team.",
-                  "Receive a proposed scope and quotation.",
-                  "Approve the project and implementation plan.",
-                  "Build, test, deploy, and support under agreed terms.",
+                  "Tell us about your business challenge and goals.",
+                  "Meet with our team to define your requirements.",
+                  "Receive a clear project scope, timeline, and quotation.",
+                  "Approve the plan and confirm the project schedule.",
+                  "We build, test, and deploy the solution, then provide agreed support.",
                 ].map((step, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0A1930] text-white flex items-center justify-center font-bold text-sm">
                       {i + 1}
                     </div>
-                    <p className="text-[#E3E8EF] leading-relaxed">{step}</p>
+                    <p className="text-[#344054] leading-relaxed">{step}</p>
                   </div>
                 ))}
               </ol>
@@ -507,50 +535,7 @@ export default function HomePage() {
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0A1930] mb-4">Frequently Asked Questions</h2>
           </div>
-          <div className="space-y-4" id="faq-list">
-            {[
-              {
-                q: "What courses are available?",
-                a: "Wisnotech Academy offers web development, graphic design, UI/UX design, video editing, AI content creation, digital marketing, software development, Microsoft Office, and data processing. Some courses are planned and not yet open for enrollment.",
-              },
-              {
-                q: "Where is training located?",
-                a: "In-person training is held in Uromi, Edo State, Nigeria. Some courses are available online or in hybrid format.",
-              },
-              {
-                q: "Is accommodation provided?",
-                a: "Accommodation may be available for eligible students travelling from outside Edo State for in-person programs, where the offer has been confirmed. Please confirm with our team.",
-              },
-              {
-                q: "How much do courses cost?",
-                a: "Course fees are listed on each course page. Standard in-person training starts at ₦300,000 for Edo State residents and ₦500,000 for students from outside Edo State. Online training has course-specific pricing.",
-              },
-              {
-                q: "Do you build custom software?",
-                a: "Yes. We build custom business software, school management systems, websites, mobile apps, and AI solutions. Prices are quoted after assessing your requirements.",
-              },
-              {
-                q: "How do I enroll?",
-                a: "Select your course on our website, complete the enrollment form, and submit your details. You will be directed to WhatsApp to continue the process with our team.",
-              },
-            ].map((faq, idx) => (
-              <div key={idx} className="border border-[#E3E8EF] rounded-lg p-5">
-                <button
-                  className="w-full flex justify-between items-center text-left text-lg font-semibold text-[#0A1930] hover:text-[#102A56] transition-colors"
-                  aria-expanded="false"
-                  aria-controls={`faq-${idx}`}
-                >
-                  {faq.q}
-                  <svg className="w-4 h-4 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
-                <div id={`faq-${idx}`} className="hidden mt-3 text-sm text-[#344054] leading-relaxed">
-                  {faq.a}
-                </div>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={FAQS} />
         </div>
       </section>
 
