@@ -12,6 +12,8 @@ const SOLUTIONS = [
     value:
       "Centralized student records, automated admissions, and streamlined administrative workflows.",
     icon: "S",
+    image: "/images/courses/data-processing.svg",
+    imageAlt: "School management system dashboard interface",
   },
   {
     id: "custom-software-development",
@@ -22,6 +24,8 @@ const SOLUTIONS = [
     value:
       "Software built for your operations, reducing repetitive work and replacing disconnected spreadsheets.",
     icon: "C",
+    image: "/images/courses/software-development.svg",
+    imageAlt: "Custom software development environment",
   },
   {
     id: "web-development",
@@ -32,6 +36,8 @@ const SOLUTIONS = [
     value:
       "A digital presence that represents your organization and serves your audience effectively.",
     icon: "W",
+    image: "/images/courses/web-development.svg",
+    imageAlt: "Website design and development preview",
   },
   {
     id: "mobile-app-development",
@@ -42,6 +48,8 @@ const SOLUTIONS = [
     value:
       "Mobile apps that bring your products and services directly to your users.",
     icon: "M",
+    image: "/images/solutions/mobile-app-development.svg",
+    imageAlt: "Mobile application design preview",
   },
   {
     id: "business-automation",
@@ -53,6 +61,8 @@ const SOLUTIONS = [
     value:
       "Automated workflows that let your team focus on higher-value work.",
     icon: "A",
+    image: "/images/courses/business-automation.svg",
+    imageAlt: "Business automation workflow diagram",
   },
   {
     id: "ai-solutions",
@@ -64,6 +74,8 @@ const SOLUTIONS = [
     value:
       "AI assistants that handle common queries and qualify leads around the clock.",
     icon: "I",
+    image: "/images/courses/ai-content-creation.svg",
+    imageAlt: "AI solutions and assistant interface",
   },
   {
     id: "media-and-publishing",
@@ -75,6 +87,8 @@ const SOLUTIONS = [
     value:
       "CMS and publishing tools built for content teams and editorial workflows.",
     icon: "P",
+    image: "/images/courses/video-editing.svg",
+    imageAlt: "Media and publishing platform preview",
   },
 ];
 
@@ -97,6 +111,16 @@ export default function SolutionsPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {SOLUTIONS.map((solution) => (
               <Card key={solution.id} hoverable className="flex flex-col h-full">
+                <div className="h-36 rounded-lg bg-[#F5F7FA] overflow-hidden mb-4">
+                  <img
+                    src={solution.image}
+                    alt={solution.imageAlt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={600}
+                    height={350}
+                  />
+                </div>
                 <div className="w-10 h-10 rounded-lg bg-[#102A56]/10 flex items-center justify-center mb-5 text-[#102A56] font-bold text-xl">
                   {solution.icon}
                 </div>

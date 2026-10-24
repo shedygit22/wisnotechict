@@ -64,7 +64,7 @@ export default async function CoursePage({ params }: { params: { slug: string } 
                   <img
                     src={course.image}
                     alt={course.imageAlt}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-48 object-cover object-top"
                     loading="eager"
                     width={600}
                     height={350}

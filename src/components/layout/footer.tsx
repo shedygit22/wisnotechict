@@ -42,7 +42,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           <div className="col-span-1 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <Logo className="h-7 inverted" />
+              <Logo className="h-7" inverted />
             </Link>
             <p className="text-sm text-[#94A3B8] leading-relaxed mb-6">
               {BRAND.positioning}

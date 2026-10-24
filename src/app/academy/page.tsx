@@ -139,8 +139,15 @@ export default function AcademyPage() {
 function CourseCard({ course, planned }: { course: Course; planned?: boolean }) {
   return (
     <Card hoverable className="flex flex-col h-full">
-      <div className="h-32 rounded-lg bg-[#F5F7FA] overflow-hidden mb-4 flex items-center justify-center">
-        <span className="text-xs text-[#64748B]">{course.category.replace(/-/g, " ")}</span>
+      <div className="h-32 rounded-lg bg-[#F5F7FA] overflow-hidden mb-4">
+        <img
+          src={course.image}
+          alt={course.imageAlt}
+          className="w-full h-full object-cover object-top"
+          loading="lazy"
+          width={400}
+          height={250}
+        />
       </div>
       <span className={`inline-block mb-2 text-xs font-semibold uppercase tracking-wide ${
         planned

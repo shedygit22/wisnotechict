@@ -36,6 +36,7 @@ const SOLUTION = {
   value:
     "AI assistants that handle common queries, qualify leads, and free your team to focus on higher-value work — without exaggerated claims.",
   imageAlt: "AI solutions and chatbot",
+  image: "/images/courses/ai-content-creation.svg",
 };
 
 export async function generateMetadata() {
@@ -77,6 +78,17 @@ export default function SolutionPage() {
           <p className="text-lg text-[#344054] leading-relaxed mb-8">
             {SOLUTION.description}
           </p>
+
+          <div className="mb-10 rounded-xl overflow-hidden border border-[#E3E8EF] shadow-sm bg-[#F5F7FA]">
+            <img
+              src={SOLUTION.image}
+              alt={SOLUTION.imageAlt}
+              className="w-full h-auto object-cover"
+              loading="eager"
+              width={1200}
+              height={700}
+            />
+          </div>
 
           <div className="grid lg:grid-cols-2 gap-10">
             <div className="space-y-8">

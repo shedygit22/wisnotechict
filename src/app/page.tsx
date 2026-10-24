@@ -5,7 +5,7 @@ import { CONTACT_INFO, WHATSAPP_URL, GMAIL_URL, TEL_URL, BRAND } from "@/types";
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 
-const HERO_IMAGE = "/images/hero-training.svg";
+const HERO_IMAGE = "/images/courses/students-collaborating.jpg";
 
 export default function HomePage() {
   const availableCourses = getAvailableCourses().slice(0, 4);
@@ -202,7 +202,7 @@ export default function HomePage() {
                   <img
                     src={course.image}
                     alt={course.imageAlt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                     loading="lazy"
                     width={400}
                     height={250}
@@ -218,7 +218,7 @@ export default function HomePage() {
                 <div className="space-y-1 mb-4 text-xs text-[#64748B]">
                   <p>
                     {course.duration
-                      ? `Duration: {course.duration}`
+                      ? `Duration: ${course.duration}`
                       : "Duration: Request details"}
                   </p>
                   <p>{course.deliveryFormat.replace("-", " ")} training</p>
@@ -398,7 +398,7 @@ export default function HomePage() {
             </div>
             <div className="h-[400px] rounded-xl overflow-hidden border border-[#E3E8EF] bg-[#F5F7FA] flex items-center justify-center">
               <img
-                src="/images/courses/Students_collaborating_at_desk_w._20261023174037.jpg"
+                src="/images/courses/web-development.jpg"
                 alt="Students in practical training sessions building projects and portfolios at Wisnotech Academy"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -427,21 +427,34 @@ export default function HomePage() {
                 title: "School Management System — Demonstration",
                 desc: "A demonstration of a student information system with admission portal and administrative dashboard.",
                 type: "Demonstration Project",
+                image: "/images/courses/data-processing.svg",
+                imageAlt: "School management system dashboard demonstration",
               },
               {
                 title: "Business Website — Demonstration",
                 desc: "A responsive business website built for a professional services organization.",
                 type: "Demonstration Project",
+                image: "/images/courses/web-development.svg",
+                imageAlt: "Business website design demonstration",
               },
               {
                 title: "E-commerce Platform — Demonstration",
                 desc: "An online store platform with product catalog, cart, and payment integration.",
                 type: "Demonstration Project",
+                image: "/images/courses/digital-marketing.svg",
+                imageAlt: "E-commerce platform demonstration",
               },
             ].map((item, idx) => (
               <Card key={idx} hoverable>
-                <div className="h-32 rounded-lg bg-[#F5F7FA] mb-4 flex items-center justify-center text-xs text-[#64748B]">
-                  {item.type}
+                <div className="h-36 rounded-lg bg-[#F5F7FA] overflow-hidden mb-4">
+                  <img
+                    src={item.image}
+                    alt={item.imageAlt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={600}
+                    height={350}
+                  />
                 </div>
                 <h3 className="text-lg font-semibold text-[#0A1930] mb-2">{item.title}</h3>
                 <p className="text-sm text-[#344054] leading-relaxed mb-4">{item.desc}</p>

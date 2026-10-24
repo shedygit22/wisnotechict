@@ -16,9 +16,11 @@ export const Logo = React.forwardRef<HTMLSpanElement, LogoProps>(
     const renderLogo = () => (
       <>
         <img
-          src="/images/brand-logo.png"
+          src={inverted ? "/images/brand-logo.png" : "/images/brand-logo-navy.png"}
           alt="Wisnotech logo"
-          className={`h-8 w-auto ${inverted ? "brightness-0 invert" : ""}`}
+          className="h-8 w-auto"
+          width={444}
+          height={293}
           aria-label="Wisnotech logomark"
         />
         <span className={`ml-2 font-bold text-xl tracking-tight uppercase ${textColor}`}>

@@ -9,6 +9,8 @@ const ARTICLES = [
       "A practical guide to the digital skills that open opportunities for students, graduates, and young professionals in Nigeria.",
     date: "2024-01-15",
     readTime: "5 min read",
+    image: "/images/courses/students-collaborating.jpg",
+    imageAlt: "Students learning digital skills together at Wisnotech Academy",
   },
   {
     slug: "ai-for-small-business",
@@ -18,6 +20,8 @@ const ARTICLES = [
       "How small businesses can use AI tools for customer service, content creation, and workflow automation without technical complexity.",
     date: "2024-02-10",
     readTime: "6 min read",
+    image: "/images/courses/ai-content-creation.jpg",
+    imageAlt: "Content creator using AI tools for a small business",
   },
   {
     slug: "school-management-systems-nigeria",
@@ -27,6 +31,8 @@ const ARTICLES = [
       "The benefits of digitizing student records, admissions, and administration for Nigerian schools.",
     date: "2024-03-05",
     readTime: "7 min read",
+    image: "/images/courses/data-processing.jpg",
+    imageAlt: "Administrator working with digital records on a computer",
   },
 ];
 
@@ -51,8 +57,15 @@ export default function InsightsPage() {
               className="block"
             >
               <div className="bg-[#F5F7FA] border border-[#E3E8EF] rounded-xl overflow-hidden">
-                <div className="h-32 bg-[#E3E8EF] flex items-center justify-center text-xs text-[#64748B]">
-                  Featured image
+                <div className="h-40 bg-[#E3E8EF] overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.imageAlt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={600}
+                    height={350}
+                  />
                 </div>
                 <div className="p-5">
                   <span className="inline-block text-xs font-semibold text-[#102A56] uppercase tracking-wide mb-2">

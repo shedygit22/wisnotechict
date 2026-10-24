@@ -38,6 +38,7 @@ const SOLUTION = {
   value:
     "Replace disconnected spreadsheets with structured systems, reduce repetitive administrative work, and build digital infrastructure that grows with your organization.",
   imageAlt: "Custom software development workflow",
+  image: "/images/courses/software-development.svg",
 };
 
 export async function generateMetadata() {
@@ -79,6 +80,17 @@ export default function SolutionPage() {
           <p className="text-lg text-[#344054] leading-relaxed mb-8">
             {SOLUTION.description}
           </p>
+
+          <div className="mb-10 rounded-xl overflow-hidden border border-[#E3E8EF] shadow-sm bg-[#F5F7FA]">
+            <img
+              src={SOLUTION.image}
+              alt={SOLUTION.imageAlt}
+              className="w-full h-auto object-cover"
+              loading="eager"
+              width={1200}
+              height={700}
+            />
+          </div>
 
           <div className="grid lg:grid-cols-2 gap-10">
             <div className="space-y-8">

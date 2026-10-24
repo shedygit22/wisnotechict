@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 600 350">
+  <defs>
+    <linearGradient id="maGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#102A56"/>
+      <stop offset="100%" stop-color="#0A1930"/>
+    </linearGradient>
+    <filter id="maShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="600" height="350" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="600" height="350" rx="12" fill="#F5F7FA" stroke="#E3E8EF" stroke-width="1"/>
+
+  <!-- Phone mockup -->
+  <g transform="translate(235, 25)" filter="url(#maShadow)">
+    <rect x="0" y="0" width="130" height="250" rx="22" fill="#0A1930"/>
+    <rect x="6" y="6" width="118" height="238" rx="18" fill="#FFFFFF"/>
+    <rect x="47" y="10" width="36" height="6" rx="3" fill="#0A1930"/>
+    <rect x="14" y="28" width="102" height="46" rx="8" fill="url(#maGrad)"/>
+    <rect x="24" y="40" width="52" height="7" rx="3" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="24" y="54" width="72" height="6" rx="3" fill="#FFFFFF" opacity="0.45"/>
+    <rect x="14" y="84" width="48" height="38" rx="6" fill="#F5F7FA" stroke="#E3E8EF"/>
+    <rect x="68" y="84" width="48" height="38" rx="6" fill="#F5F7FA" stroke="#E3E8EF"/>
+    <circle cx="32" cy="100" r="6" fill="#102A56" opacity="0.3"/>
+    <circle cx="86" cy="100" r="6" fill="#102A56" opacity="0.3"/>
+    <rect x="14" y="132" width="102" height="10" rx="4" fill="#E3E8EF"/>
+    <rect x="14" y="150" width="82" height="10" rx="4" fill="#E3E8EF"/>
+    <rect x="14" y="168" width="94" height="10" rx="4" fill="#E3E8EF"/>
+    <rect x="14" y="192" width="102" height="26" rx="8" fill="#102A56"/>
+    <rect x="44" y="201" width="42" height="8" rx="4" fill="#FFFFFF" opacity="0.85"/>
+    <rect x="14" y="226" width="30" height="6" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="50" y="226" width="30" height="6" rx="3" fill="#102A56" opacity="0.2"/>
+    <rect x="86" y="226" width="30" height="6" rx="3" fill="#102A56" opacity="0.2"/>
+  </g>
+
+  <!-- Tablet mockup -->
+  <g transform="translate(55, 70)" filter="url(#maShadow)">
+    <rect x="0" y="0" width="150" height="190" rx="12" fill="#0A1930"/>
+    <rect x="6" y="6" width="138" height="178" rx="8" fill="#FFFFFF"/>
+    <rect x="14" y="16" width="122" height="24" rx="5" fill="#F5F7FA"/>
+    <circle cx="27" cy="28" r="5" fill="#102A56" opacity="0.4"/>
+    <rect x="38" y="24" width="52" height="8" rx="3" fill="#E3E8EF"/>
+    <rect x="14" y="50" width="92" height="10" rx="4" fill="#E3E8EF"/>
+    <rect x="14" y="68" width="122" height="70" rx="6" fill="url(#maGrad)" opacity="0.9"/>
+    <path d="M24 120 L44 96 L60 110 L80 84 L100 104 L126 74" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="14" y="150" width="58" height="24" rx="6" fill="#102A56"/>
+    <rect x="80" y="150" width="56" height="24" rx="6" fill="#F5F7FA" stroke="#E3E8EF"/>
+  </g>
+
+  <!-- Code badge -->
+  <g transform="translate(420, 60)" filter="url(#maShadow)">
+    <rect x="0" y="0" width="130" height="100" rx="10" fill="#FFFFFF" stroke="#E3E8EF"/>
+    <rect x="0" y="0" width="130" height="22" rx="10" fill="#102A56"/>
+    <circle cx="12" cy="11" r="3" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="24" cy="11" r="3" fill="#FFFFFF" opacity="0.6"/>
+    <rect x="14" y="36" width="80" height="7" rx="3" fill="#102A56" opacity="0.3"/>
+    <rect x="22" y="50" width="92" height="7" rx="3" fill="#E3E8EF"/>
+    <rect x="22" y="64" width="64" height="7" rx="3" fill="#E3E8EF"/>
+    <rect x="14" y="80" width="48" height="7" rx="3" fill="#102A56" opacity="0.3"/>
+  </g>
+
+  <text x="300" y="325" font-family="Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">Mobile App Development</text>
+</svg>

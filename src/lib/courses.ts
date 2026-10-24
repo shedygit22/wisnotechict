@@ -112,7 +112,7 @@ export const COURSES: Course[] = [
     seoTitle: "Web Design and Development Training | Wisnotech Academy",
     seoDescription:
       "Learn web design and development in Uromi, Edo State. Build responsive websites with HTML, CSS, and JavaScript. Practical, project-based training.",
-    image: "/images/courses/Web_developer_working_at_desk_20261023174112.jpg",
+    image: "/images/courses/web-development.jpg",
     imageAlt: "Web development training session at Wisnotech Academy",
   },
   {
@@ -166,7 +166,7 @@ export const COURSES: Course[] = [
     seoTitle: "Graphic Design Training | Wisnotech Academy, Uromi",
     seoDescription:
       "Learn graphic design and visual communication in Uromi, Edo State. Practical training in branding, layout, and design tools.",
-    image: "/images/courses/Designer_working_on_monitor_20261023174039.jpg",
+    image: "/images/courses/graphic-design.jpg",
     imageAlt: "Graphic design training at Wisnotech Academy",
   },
   {
@@ -220,7 +220,7 @@ export const COURSES: Course[] = [
     seoTitle: "UI/UX Design Training | Wisnotech Academy",
     seoDescription:
       "Learn UI/UX design in Uromi, Edo State. User research, wireframing, prototyping, and interface design for web and mobile.",
-    image: "/images/courses/Designer_working_with_multiple_d._20261023174124.jpg",
+    image: "/images/courses/ui-ux-design.jpg",
     imageAlt: "UI/UX design training session at Wisnotech Academy",
   },
   {
@@ -274,7 +274,7 @@ export const COURSES: Course[] = [
     seoTitle: "Video Editing Training | Wisnotech Academy, Uromi",
     seoDescription:
       "Learn video editing and post-production in Uromi, Edo State. Practical training in Premiere Pro, After Effects, and colour grading.",
-    image: "/images/courses/Video_editor_at_editing_setup_20261023174117.jpg",
+    image: "/images/courses/video-editing.jpg",
     imageAlt: "Video editing training at Wisnotech Academy",
   },
   {
@@ -335,7 +335,7 @@ export const COURSES: Course[] = [
     seoTitle: "AI Content Creation Course | Wisnotech Academy",
     seoDescription:
       "Learn AI content creation online. Practical training in generative AI tools for writing, images, audio, and video content.",
-    image: "/images/courses/Content_creator_working_with_AI_20261023174103.jpg",
+    image: "/images/courses/ai-content-creation.jpg",
     imageAlt: "AI content creation training at Wisnotech Academy",
   },
   {
@@ -395,7 +395,7 @@ export const COURSES: Course[] = [
     seoTitle: "Digital Marketing Training | Wisnotech Academy, Uromi",
     seoDescription:
       "Learn digital marketing in Uromi, Edo State. Social media ads, Google Ads, email marketing, and campaign strategy.",
-    image: "/images/courses/Digital_marketer_working_on_laptop_20261023174109.jpg",
+    image: "/images/courses/digital-marketing.jpg",
     imageAlt: "Digital marketing training at Wisnotech Academy",
   },
   {
@@ -451,7 +451,7 @@ export const COURSES: Course[] = [
     seoTitle: "Software Development Training | Wisnotech Academy, Uromi",
     seoDescription:
       "Learn software development in Uromi, Edo State. Backend development, databases, APIs, and deployment training.",
-    image: "/images/courses/Software_developer_working_at_desk_20261023174100.jpg",
+    image: "/images/courses/software-development.jpg",
     imageAlt: "Software development training at Wisnotech Academy",
   },
   {
@@ -511,7 +511,7 @@ export const COURSES: Course[] = [
     seoTitle: "Business Automation and AI Workflow Training | Wisnotech",
     seoDescription:
       "Learn business automation and AI workflow development. No-code tools, process automation, and AI assistants for businesses.",
-    image: "/images/courses/Professional_managing_business_w._20261023174044.jpg",
+    image: "/images/courses/business-automation.jpg",
     imageAlt: "Business automation training at Wisnotech Academy",
   },
   {
@@ -565,7 +565,7 @@ export const COURSES: Course[] = [
     seoTitle: "Microsoft Office and Digital Productivity Training | Wisnotech",
     seoDescription:
       "Learn Microsoft Office and digital productivity skills in Uromi, Edo State. Word, Excel, PowerPoint, and Outlook training.",
-    image: "/images/courses/Professional_working_at_office_desk_20261023174050.jpg",
+    image: "/images/courses/digital-productivity.jpg",
     imageAlt: "Digital productivity training at Wisnotech Academy",
   },
   {
@@ -619,7 +619,7 @@ export const COURSES: Course[] = [
     seoTitle: "Data Processing and Digital Office Skills | Wisnotech Academy",
     seoDescription:
       "Learn data processing and digital office skills in Uromi, Edo State. Data entry, Excel, and database administration training.",
-    image: "/images/courses/Analyst_working_at_computer_moni._20261023174054.jpg",
+    image: "/images/courses/data-processing.jpg",
     imageAlt: "Data processing training at Wisnotech Academy",
   },
 ];

@@ -8,6 +8,8 @@ const PROJECTS = [
     description:
       "A demonstration of a student information system with admission portal, attendance tracking, and administrative dashboard for schools.",
     type: "Demonstration Project",
+    image: "/images/courses/data-processing.svg",
+    imageAlt: "School management system dashboard demonstration",
   },
   {
     title: "Business Website — Demonstration",
@@ -15,6 +17,8 @@ const PROJECTS = [
     description:
       "A responsive business website built for a professional services organization, with service pages, contact forms, and mobile-friendly design.",
     type: "Demonstration Project",
+    image: "/images/courses/web-development.svg",
+    imageAlt: "Business website design demonstration",
   },
   {
     title: "E-commerce Platform — Demonstration",
@@ -22,6 +26,8 @@ const PROJECTS = [
     description:
       "An online store platform with product catalog, shopping cart, checkout, and order management for a retail business.",
     type: "Demonstration Project",
+    image: "/images/courses/digital-marketing.svg",
+    imageAlt: "E-commerce platform demonstration",
   },
   {
     title: "AI Assistant — Demonstration",
@@ -29,6 +35,8 @@ const PROJECTS = [
     description:
       "A knowledge-base chatbot demonstration for customer service, trained on sample business documentation.",
     type: "Demonstration Project",
+    image: "/images/courses/ai-content-creation.svg",
+    imageAlt: "AI assistant chat demonstration",
   },
 ];
 
@@ -48,8 +56,15 @@ export default function ProjectsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.map((project) => (
             <Card key={project.title} hoverable>
-              <div className="h-32 rounded-lg bg-[#F5F7FA] mb-4 flex items-center justify-center text-xs text-[#64748B]">
-                {project.type}
+              <div className="h-36 rounded-lg bg-[#F5F7FA] overflow-hidden mb-4">
+                <img
+                  src={project.image}
+                  alt={project.imageAlt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={600}
+                  height={350}
+                />
               </div>
               <span className="inline-block mb-2 text-xs font-semibold text-[#102A56] uppercase tracking-wide">
                 {project.category}
